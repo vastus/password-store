@@ -73,13 +73,14 @@ a specific gpg-id or set of gpg-ids is assigned for that specific sub folder of
 the password store. If only one \fIgpg-id\fP is given, and it is an empty string,
 then the current \fI.gpg-id\fP file for the specified \fIsub-folder\fP (or root if
 unspecified) is removed.
+
 .TP
-\fBls\fP \fIsubfolder\fP
-List names of passwords inside the tree at
-.I subfolder
-by using the
-.BR tree (1)
-program. This command is alternatively named \fBlist\fP.
+\fBls\fP [ \fI--oneperline\fP, \fI-1\fP ] \fI[subfolder]\fP
+List names of passwords in the password store directory or the tree at
+\fIsubfolder\fP, if given, by using the \fBtree\fP (1) program. To list names
+one entry per line, use \fI-1\fP. This command is alternatively named
+\fBlist\fP.
+
 .TP
 \fBgrep\fP [\fIGREPOPTIONS\fP] \fIsearch-string\fP
 Searches inside each decrypted password file for \fIsearch-string\fP, and displays line
@@ -218,6 +219,18 @@ Password Store
 
 .br
 Alternatively, "\fBpass ls\fP".
+
+.EX
+.B $ pass ls -1
+Business/some-silly-business-site.com
+Business/another-business-site.net
+Email/donenfeld.com
+Email/zx2c4.com
+France/bank
+France/freebox
+France/mobilephone
+.EE
+
 .TP
 Find existing passwords in store that match .com
 .B zx2c4@laptop ~ $ pass find .com
