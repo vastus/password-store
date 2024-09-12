@@ -1,5 +1,5 @@
  * pass cp [all the above]
- * pass insert, pass ls
+ * pass insert
  * pass insert [with -e, with -m, without either]
  * pass insert, cp, mv, rm, generate [with -f, without -f, on existing]
  * git operations on all commands
